@@ -30,7 +30,11 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        //
+        $meta = [
+            'title' => 'SIP - Tambah Konsumen',
+            'navigation' => 'Tambah Konsumen',
+        ];
+        return view('customers.create', ['meta' => $meta]);
     }
 
     /**
@@ -41,7 +45,39 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            // 'nama_lengkap' => 'required',
+            // 'kartu_identitas' => 'required',
+            // 'alamat_diri' => 'required',
+            // 'no_identitas' => 'required|unique:customers',
+            // 'telp_diri' => 'required',
+            // 'email' => 'required',
+            // 'npwp' => 'required',
+            // 'gaji' => 'required',
+            // 'pekerjaan' => 'required',
+            // 'nama_kantor' => 'required',
+            // 'alamat_kantor' => 'required',
+            // 'telp_kantor' => 'required',
+            // 'status' => 'required',
+            // 'nama_keluarga' => 'required',
+            // 'hubungan_keluarga' => 'required',
+            // 'telp_keluarga' => 'required',
+            // 'alamat_keluarga' => 'required',
+            'foto_diri' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+        ]);
+
+        $imageName = $request->nama_lengkap.time().'.'.$request->foto_diri->extension();
+        $request->foto_diri->move(public_path('images/customers'), $imageName);
+        
+        $x = [];
+        foreach ($request->all() as $key => $value) {
+            if($key != "foto_diri"){
+                $x[$key] = $value;
+            }
+        }
+        $x['foto_diri'] = $imageName;
+        Customer::create($x);
+        return redirect('/customers')->with('status','Data Konsumen berhasil ditambahkan!');
     }
 
     /**
@@ -51,8 +87,13 @@ class CustomersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Customer $customer)
-    {
-        return($customer);
+    {   
+        $meta = [
+            'title' => 'SIP - Detail Konsumen',
+            'navigation' => 'Detail Konsumen',
+            'subtitle' => 'Detail Konsumen',
+        ];
+        return view('customers.show', ['meta' => $meta, 'customer' => $customer]);
     }
 
     /**
@@ -63,7 +104,13 @@ class CustomersController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        $meta = [
+            'title' => 'SIP - Update Konsumen',
+            'navigation' => 'Update Konsumen',
+            'subtitle' => 'Update Konsumen',
+        ];
+        // dd($customer);
+        return view('customers.edit',['meta' => $meta, 'customer' => $customer]);
     }
 
     /**

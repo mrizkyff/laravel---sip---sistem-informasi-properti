@@ -10,7 +10,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <table id="table_list_konsumen" class="table table-bordered table-striped table-sm">
+          <table id="table_list_konsumen" class="table table-bordered table-striped table-sm table-hover">
             <thead>
                 <tr>
                     <th>No</th>
@@ -35,7 +35,11 @@
                         <td>{{$customer->telp_diri}}</td>
                         <td>{{$customer->email}}</td>
                         <td>{{$customer->created_at}}</td>
-                        <td>Aksi</td>
+                        <td>
+                            <a href="/customers/{{$customer->id}}" style="padding: 4px;" class="badge bg-info"><i class="fas fa-info-circle"></i> Detail</a>
+                            <a href="/customers/{{$customer->id}}/edit" style="padding: 4px;" class="badge bg-primary"><i class="fas fa-edit    "></i> Edit</a>
+                            <button type="submit" style="border: 0; padding: 4px;" class="badge bg-danger"><i class="fas fa-trash    "></i> Delete</button>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

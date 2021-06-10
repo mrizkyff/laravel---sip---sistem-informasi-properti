@@ -46,23 +46,23 @@ class CustomersController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            // 'nama_lengkap' => 'required',
-            // 'kartu_identitas' => 'required',
-            // 'alamat_diri' => 'required',
-            // 'no_identitas' => 'required|unique:customers',
-            // 'telp_diri' => 'required',
-            // 'email' => 'required',
-            // 'npwp' => 'required',
-            // 'gaji' => 'required',
-            // 'pekerjaan' => 'required',
-            // 'nama_kantor' => 'required',
-            // 'alamat_kantor' => 'required',
-            // 'telp_kantor' => 'required',
-            // 'status' => 'required',
-            // 'nama_keluarga' => 'required',
-            // 'hubungan_keluarga' => 'required',
-            // 'telp_keluarga' => 'required',
-            // 'alamat_keluarga' => 'required',
+            'nama_lengkap' => 'required',
+            'kartu_identitas' => 'required',
+            'alamat_diri' => 'required',
+            'no_identitas' => 'required|unique:customers',
+            'telp_diri' => 'required',
+            'email' => 'required',
+            'npwp' => 'required',
+            'gaji' => 'required',
+            'pekerjaan' => 'required',
+            'nama_kantor' => 'required',
+            'alamat_kantor' => 'required',
+            'telp_kantor' => 'required',
+            'status' => 'required',
+            'nama_keluarga' => 'required',
+            'hubungan_keluarga' => 'required',
+            'telp_keluarga' => 'required',
+            'alamat_keluarga' => 'required',
             'foto_diri' => 'required|image|mimes:jpeg,png,jpg|max:1024',
         ]);
 
@@ -122,7 +122,25 @@ class CustomersController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        // validatenya belum
+        // validatenya
+        $request->validate([
+            'nama_lengkap' => 'required',
+            'alamat_diri' => 'required',
+            'telp_diri' => 'required',
+            'email' => 'required',
+            'gaji' => 'required',
+            'pekerjaan' => 'required',
+            'nama_kantor' => 'required',
+            'alamat_kantor' => 'required',
+            'telp_kantor' => 'required',
+            'status' => 'required',
+            'nama_keluarga' => 'required',
+            'hubungan_keluarga' => 'required',
+            'telp_keluarga' => 'required',
+            'alamat_keluarga' => 'required',
+            'foto_diri' => '|image|mimes:jpeg,png,jpg|max:1024',
+        ]);
+
         $x = [];
         if($request->foto_diri === null){
             // dd($request->foto_diri);
@@ -148,12 +166,9 @@ class CustomersController extends Controller
         Customer::where('id', $customer->id)
             ->update([
                 'nama_lengkap' => $x['nama_lengkap'],
-                'kartu_identitas' => $x['kartu_identitas'],
                 'alamat_diri' => $x['alamat_diri'],
-                'no_identitas' => $x['no_identitas'],
                 'telp_diri' => $x['telp_diri'],
                 'email' => $x['email'],
-                'npwp' => $x['npwp'],
                 'gaji' => $x['gaji'],
                 'keterangan_diri' => $x['keterangan_diri'],
                 'pekerjaan' => $x['pekerjaan'],

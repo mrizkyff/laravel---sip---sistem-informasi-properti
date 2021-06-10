@@ -185,6 +185,8 @@ class CustomersController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        Customer::destroy($customer->id);
+
+        return redirect('/customers')->with('status','Data Konsumen berhasil dihapus!!');
     }
 }

@@ -314,7 +314,7 @@
         <center>
             <a href="/customers" class="btn btn-info btn-md mb-2"><i class="fas fa-backward"></i> Kembali</a>
 
-            <button type="submit" class="btn btn-info btn-md mb-2">Simpan <i class="fas fa-paper-plane"></i></button>
+            <button type="submit" class="btn btn-info btn-md mb-2">Simpan <i class="fas fa-edit"></i></button>
             </form>
         </center>
     </div>

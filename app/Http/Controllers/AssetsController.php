@@ -126,7 +126,7 @@ class AssetsController extends Controller
             $x['foto'] = $asset->foto;
         }
         else if($request->foto !== null){
-            $imageName = $request->nama_lengkap.time().'.'.$request->foto->extension();
+            $imageName = $request->nama_asset.time().'.'.$request->foto->extension();
             $request->foto->move(public_path('images/assets'), $imageName);
             $x['foto'] = $imageName;
         }

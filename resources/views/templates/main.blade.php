@@ -172,6 +172,7 @@
   </nav>
   <!-- /.navbar -->
 
+
   @include('templates/sidebar')
 
   <!-- Content Wrapper. Contains page content -->
@@ -179,6 +180,16 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
+        <!-- message/notifications -->
+        @if (session('status'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{session('status')}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        @endif
+        <!-- akhir message/notifications -->
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">{{$meta['navigation']}}</h1>
@@ -267,5 +278,14 @@
 <script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 @yield('scriptku')
+<script>
+    $(document).ready(function() {
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 4000);
+    });    
+</script>
 </body>
 </html>

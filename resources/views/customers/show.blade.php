@@ -12,13 +12,13 @@
           <center>
           <table style="width: 80%" border=0>
               <tr>
-                  <td style="width:130px;">Nama Lengkap *</td>
+                  <td style="width:160px;">Nama Lengkap *</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->nama_lengkap}}</td>
+                  <td style="width:300px;">{{$customer->nama_lengkap}}</td>
                   <td></td>
-                  <td style="width:140px;">Kartu Identitas *</td>
+                  <td style="width:170px;">Kartu Identitas *</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->kartu_identitas}}</td>
+                  <td style="width:300px;">{{$customer->kartu_identitas}}</td>
               </tr>
               <tr>
                   <td>Alamat Lengkap *</td>
@@ -43,7 +43,7 @@
                   <td>:</td>
                   <td>{{$customer->npwp}}</td>
                   <td></td>
-                  <td>Gaji</td>
+                  <td>Gaji *</td>
                   <td>:</td>
                   <td>{{$customer->gaji}}</td>
               </tr>
@@ -76,13 +76,13 @@
           <center>
           <table style="width: 80%" border=0>
               <tr>
-                  <td style="width:130px;">Pekerjaan *</td>
+                  <td style="width:160px;">Pekerjaan *</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->pekerjaan}}</td>
+                  <td style="width:300px;">{{$customer->pekerjaan}}</td>
                   <td></td>
-                  <td style="width:140px;">Nama Kantor *</td>
+                  <td style="width:170px;">Nama Kantor *</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->nama_kantor}}</td>
+                  <td style="width:300px;">{{$customer->nama_kantor}}</td>
               </tr>
               <tr>
                   <td>Alamat Kantor *</td>
@@ -122,13 +122,13 @@
           <center>
           <table style="width: 80%" border=0>
               <tr>
-                  <td style="width:130px;">Status *</td>
+                  <td style="width:160px;">Status *</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->status}}</td>
+                  <td style="width:300px;">{{$customer->status}}</td>
                   <td></td>
-                  <td style="width:140px;">Nama Pasangan</td>
+                  <td style="width:170px;">Nama Pasangan</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->nama_pasangan}}</td>
+                  <td style="width:300px;">{{$customer->nama_pasangan}}</td>
               </tr>
               <tr>
                   <td>No. Telp</td>
@@ -168,13 +168,13 @@
           <center>
           <table style="width: 80%" border=0>
               <tr>
-                  <td style="width:130px;">Nama</td>
+                  <td style="width:160px;">Nama</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->nama_keluarga}}</td>
+                  <td style="width:300px;">{{$customer->nama_keluarga}}</td>
                   <td></td>
-                  <td style="width:140px;">Hubungan Keluarga</td>
+                  <td style="width:170px;">Hubungan Keluarga</td>
                   <td style="width:10px;">:</td>
-                  <td style="width:250px;">{{$customer->hubungan_keluarga}}</td>
+                  <td style="width:300px;">{{$customer->hubungan_keluarga}}</td>
               </tr>
               <tr>
                   <td>No. Telp</td>

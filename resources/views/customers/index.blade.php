@@ -38,7 +38,11 @@
                         <td>
                             <a href="/customers/{{$customer->id}}" style="padding: 4px;" class="badge bg-info"><i class="fas fa-info-circle"></i> Detail</a>
                             <a href="/customers/{{$customer->id}}/edit" style="padding: 4px;" class="badge bg-primary"><i class="fas fa-edit    "></i> Edit</a>
-                            <button type="submit" style="border: 0; padding: 4px;" class="badge bg-danger"><i class="fas fa-trash    "></i> Delete</button>
+                            <form method="POST" action="/customers/{{$customer->id}}" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" style="border: 0; padding: 4px;" class="badge bg-danger"><i class="fas fa-trash    "></i> Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
